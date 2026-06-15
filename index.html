@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Pantry Restocker Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Smart Pantry Restocker</h1>
+        <p>Process incoming raw shipments and organize tasks by zone instantly.</p>
+    </header>
+
+    <main>
+        <section class="input-container">
+            <div class="input-box">
+                <label for="pantryInput">Current Pantry Inventory (JSON format):</label>
+                <textarea id="pantryInput">[
+  { "sku": "SKU1", "name": "Apple Juice", "qty": 10, "expires": "2026-10-01", "zone": "fridge" }
+]</textarea>
+            </div>
+
+            <div class="input-box">
+                <label for="shipmentInput">Incoming Raw Shipment (Pipe Separated):</label>
+                <textarea id="shipmentInput">SKU1|Apple Juice|5|2026-10-01|fridge
+SKU2|Almond Milk|0|2026-09-12|fridge
+SKU3|Canned Beans|12|2027-01-15</textarea>
+            </div>
+        </section>
+
+        <div class="actions-bar">
+            <button id="processBtn">Process Restock Plan</button>
+        </div>
+
+        <section>
+            <h2>Warehouse Action Plan by Zone</h2>
+            <div id="dashboard" class="dashboard-grid">
+                <p class="placeholder-text">Paste your data above and hit process to generate cards.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="js.js"></script>
+</body>
+
+</html>
